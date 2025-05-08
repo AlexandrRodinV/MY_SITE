@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html-lang="ru">
+  <head>
+    <title>Дракон и лотос</title>
+    <meta http-equiv="Content-type" content= "text/html;charset=UTF-8"/>
+    <link rel="stylesheet" href="css/Odzyvi.css">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+      <nav class="menu">
+        <img src="img/logo3.png" alt="Дракон и Лотос" class="menu__icon" width="75" height="70">
+
+        <a href="index2.html" class="menu__text">Главная</a>
+        <button id="openModalBtn"  class="window">Меню</button>
+        <a href="index1.html" class="menu__text">Услуги</a>
+        <a href="index3.html" class="menu__text">Бронирование</a>
+        <a href="Отзывы.html" class="menu__text">Отзывы</a>
+      </nav>
+        
+      <div id="modal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Меню</h2>
+      <button id="closeModalBtn">×</button>
+    </div>
+    <div class="modal__text">
+      <a href="kitayskoe.html"><p>Китайское</p></a>
+        <a href="yaponskoe.html"><p>Японское</p></a>
+        <a href="koreyskoe.html"><p>Корейское</p></a>
+        <a href="napitki.html"><p>Напитки</p></a>
+      </div>
+  </div>
+  <script>
+    const modal = document.getElementById('modal');
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+
+// Функция открытия
+function openModal() {
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+}
+
+// Функция закрытия
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Обработчики событий
+openBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+
+// Закрытие при клике мимо окна
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Закрытие при нажатии ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+  </script>
+</div>
+
+<div class="container">
+        <div class="header-section">
+            <h1>Отзывы ресторана «Дракон и Лотос»</h1>
+            <h2>Где восточная кухня встречается с европейским сервисом</h2>
+        </div>
+       
+    </div>
+    <div class="container">
+       <div class="reviews-container">
+            <h3>Последние отзывы</h3>
+            <div class="review-card">
+            <div class="review-header">
+                <img src="img/user1.png" alt="Аватар" class="review-avatar">
+                <div>
+                    <span>Иван Петров</span>
+                    <div class="review-rating">★★★★</div>
+                </div>
+            </div>
+            <div class="review-text">
+                <p>Отличный ресторан! Суши просто божественные, а десерты в виде лотоса — шедевр! Обслуживание на высшем уровне, персонал знает о каждом блюде и помогает с выбором.</p>
+            </div>
+            <div class="review-footer">
+                <span>29 марта 2025</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <img src="img/user2.png" alt="Аватар" class="review-avatar">
+                <div>
+                    <span>Мария Сидорова</span>
+                    <div class="review-rating">★★★☆</div>
+                </div>
+            </div>
+            <div class="review-text">
+                <p>Пришли на день рождения. Меню разнообразное, но порции могли бы быть побольше. Атмосфера очень уютная, особенно понравились живые растения в стиле бонсай.</p>
+            </div>
+            <div class="review-footer">
+                <span>15 марта 2025</span>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <img src="img/user2.png" alt="Аватар" class="review-avatar">
+                <div>
+                    <span>Елена</span>
+                    <div class="review-rating">★★★★</div>
+                </div>
+            </div>
+            <div class="review-text">
+                <p>Постоянно заказываю бизнес-ланчи — меню разнообразное, а цены адекватные. Сегодня попробовала суп «Том Ям» с креветками — острый, но не жгучий. Официантка Алина всегда подскажет, что выбрать для диеты. Спасибо за стабильное качество!</p>
+            </div>
+            <div class="review-footer">
+                <span>20 марта 2025</span>
+            </div>
+        </div>
+            <div id="reviews"></div>
+        </div>
+        <div class="review-form">
+            <h3>Оставьте отзыв</h3>
+            <div class="form-group">
+                <label>Ваше имя:</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Оценка:</label>
+                <div class="rating-container">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <input type="hidden" id="rating" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>Ваш отзыв:</label>
+                <textarea id="reviewText" rows="5" required></textarea>
+            </div>
+
+            <button class="btn-submit" onclick="addReview()">Отправить</button>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        let reviews = [];
+        let selectedRating = 0;
+
+        // Обработка рейтинга
+        document.querySelectorAll('.rating-star').forEach(star => {
+            star.addEventListener('click', (e) => {
+                const rating = parseInt(e.target.dataset.rating);
+                selectedRating = rating;
+                document.getElementById('rating').value = rating;
+                
+                // Активация звезд
+                document.querySelectorAll('.rating-star').forEach(s => {
+                    s.classList.remove('active');
+                    if (parseInt(s.dataset.rating) <= rating) {
+                        s.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Добавление отзыва
+        function addReview() {
+            const name = document.getElementById('name').value;
+            const rating = document.getElementById('rating').value;
+            const text = document.getElementById('reviewText').value;
+            
+            if (name && rating && text) {
+                const newReview = {
+                    name: name,
+                    rating: rating,
+                    text: text,
+                    date: new Date().toLocaleString()
+                };
+                
+                reviews.unshift(newReview);
+                renderReviews();
+                clearForm();
+            }
+        }
+
+        // Очистка формы
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('rating').value = 0;
+            document.getElementById('reviewText').value = '';
+            document.querySelectorAll('.rating-star').forEach(s => s.classList.remove('active'));
+        }
+
+        // Рендеринг отзывов
+        function renderReviews() {
+            const reviewsContainer = document.getElementById('reviews');
+            reviewsContainer.innerHTML = reviews.map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">${review.name[0]}</div>
+                        <div>
+                            <span>${review.name}</span>
+                            <div class="review-rating">★${review.rating}</div>
+                        </div>
+                    </div>
+                    <div class="review-text">${review.text}</div>
+                    <div class="review-footer">Добавлено: ${review.date}</div>
+                </div>
+            `).join('');
+        }
+
+        // Инициализация
+        renderReviews();
+    </script>
+
+<div class="footer" id="footer">
+    <div class="footer__map">
+          <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/minitsen/1298530229/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/77/blagoveshchensk/category/pharmacy/184105932/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:relative;top:14px;">Аптека в Благовещенске</a><iframe src="https://yandex.ru/map-widget/v1/?display-text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD&ll=127.555350%2C50.261437&mode=search&oid=1298530229&ol=biz&sctx=ZAAAAAgBEAAaKAoSCYWZtn9l819AEXA%2BdaxSQElAEhIJrFYm%2FFL%2F9j8RbHwm%2B%2Bdp4T8iBgABAgMEBSgKOABAw48GSAFqAnJ1nQHNzMw9oAEAqAEAvQHbfat%2FwgEu5bqpk98DmMzLnKwEiPvC06AD8cnG8Bvayrzt%2FgT1uNjltQXds8LYkQbakNmRBIICMdCg0LXRgdGC0L7RgNCw0L0sINCQ0LzRg9GA0YHQutCw0Y8g0L7QsdC70LDRgdGC0YyKAgCSAgUxMTM3NZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=127.570878%2C50.261136&sspn=0.089833%2C0.034186&text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%2C%20%D0%90%D0%BC%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&z=13.94" width="700" height="250" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+        <div class="footer__text">
+          <p>Амурская область, город Видное, спуск Ладыгина, 26</p>
+          <p>Телефон: +7(953)543-16-75</p>
+          <p>E-mail: <span>restoranAzia@gmail.com</span> </p>
+          <p>Часы работы: Пн-Вс 11:00-23:00</p>
+        </div>
+        <div class="footer__img">
+          <div class="footer__images"><a href="https://t.me/alex5zz" target="_blank"><img src="img/telegram.png" alt="telegram" width="50" height="50"></a></div>
+          <div class="footer__images"><a href="https://x.com/AlexytId87965" target="_blank"><img src="img/X.png" alt="twitter" width="50" height="50"></a></div>
+          <div class="footer__images"><a href="https://vk.com/rodin_a_v" target="_blank"><img src="img/vk.png" alt="VK" width="50" height="50"></a></div>
+        </div>
+    
+      </div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html-lang="ru">
+	<head>
+		<title>Дракон и лотос</title>
+		<meta http-equiv="Content-type" content= "text/html;charset=UTF-8"/>
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+<body>		
+<nav class="menu">
+        <img src="img/logo3.png" alt="Дракон и Лотос" class="menu__icon" width="75" height="70">
+
+        <a href="index2.html" class="menu__text">Главная</a>
+        <button id="openModalBtn"  class="window">Меню</button>
+        <a href="index1.html" class="menu__text">Услуги</a>
+        <a href="index3.html" class="menu__text">Бронирование</a>
+        <a href="Отзывы.html" class="menu__text">Отзывы</a>
+      </nav>
+
+			<div id="modal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Меню</h2>
+      <button id="closeModalBtn">×</button>
+    </div>
+    <div class="modal__text">
+    	<a href="kitayskoe.html"><p>Китайское</p></a>
+        <a href="yaponskoe.html"><p>Японское</p></a>
+        <a href="koreyskoe.html"><p>Корейское</p></a>
+        <a href="napitki.html"><p>Напитки</p></a>
+      </div>
+  </div>
+  <script>
+  	const modal = document.getElementById('modal');
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+
+// Функция открытия
+function openModal() {
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+}
+
+// Функция закрытия
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Обработчики событий
+openBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+
+// Закрытие при клике мимо окна
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Закрытие при нажатии ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+  </script>
+</div>																						
+			<div class="bron">
+				<div class="container">
+					<h2>Забронируйте место</h2>
+					<div class="bron__text">
+						
+						<img class="bron__img" src="img/Бронь.webp" alt="" width="1050" height="350">
+						<div class="bron__content">
+							<p class="bron__form">Ваше имя: <input type="textarea" class="bron__input"> </p>
+												<p class="bron__form">Количество гостей: 
+													<select class="bron__input" id="guests" required>
+						                <option value="">Выберите</option>
+						                <option value="1">1</option>
+						                <option value="2">2</option>
+						                <option value="3">3</option>
+						                <option value="4">4</option>
+						                <option value="5">5</option>
+						                <option value="6">6</option>
+						            </select>
+						          </p>
+												<p class="bron__form">Выберите место: <input type="textarea" class="bron__input"></p>
+												<p class="bron__form">Дата и время: <input type="datetime-local" id="datetime" class="bron__input" required></p>
+												<a href="index3.html"><button>Отправить заявку</button></a>
+											</div>
+						
+									</div>
+					
+				</div>
+			</div>
+
+
+
+
+
+			<div class="footer" id="footer">
+		<div class="footer__map">
+					<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/minitsen/1298530229/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Миницен</a><a href="https://yandex.ru/maps/77/blagoveshchensk/category/pharmacy/184105932/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аптека в Благовещенске</a><iframe src="https://yandex.ru/map-widget/v1/?display-text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD&ll=127.555350%2C50.261437&mode=search&oid=1298530229&ol=biz&sctx=ZAAAAAgBEAAaKAoSCYWZtn9l819AEXA%2BdaxSQElAEhIJrFYm%2FFL%2F9j8RbHwm%2B%2Bdp4T8iBgABAgMEBSgKOABAw48GSAFqAnJ1nQHNzMw9oAEAqAEAvQHbfat%2FwgEu5bqpk98DmMzLnKwEiPvC06AD8cnG8Bvayrzt%2FgT1uNjltQXds8LYkQbakNmRBIICMdCg0LXRgdGC0L7RgNCw0L0sINCQ0LzRg9GA0YHQutCw0Y8g0L7QsdC70LDRgdGC0YyKAgCSAgUxMTM3NZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=127.570878%2C50.261136&sspn=0.089833%2C0.034186&text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%2C%20%D0%90%D0%BC%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&z=13.94" width="700" height="250" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+				</div>
+				<div class="footer__text">
+					<p>Амурская область, город Видное, спуск Ладыгина, 26</p>
+					<p>Телефон: +7(953)543-16-75</p>
+					<p>E-mail: <span>restoranAzia@gmail.com</span> </p>
+					<p>Часы работы: Пн-Вс 11:00-23:00</p>
+				</div>
+				<div class="footer__img">
+					<div class="footer__images"><a href="https://t.me/alex5zz" target="_blank"><img src="img/telegram.png" alt="telegram" width="50" height="50"></a></div>
+					<div class="footer__images"><a href="https://x.com/AlexytId87965" target="_blank"><img src="img/X.png" alt="twitter" width="50" height="50"></a></div>
+					<div class="footer__images"><a href="https://vk.com/rodin_a_v" target="_blank"><img src="img/vk.png" alt="VK" width="50" height="50"></a></div>
+				</div>
+		
+			</div>
+</body>
