@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html-lang="ru">
+	<head>
+		<title>Дракон и лотос</title>
+		<meta http-equiv="Content-type" content= "text/html;charset=UTF-8"/>
+		<link rel="stylesheet" href="css/style2index.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+			<nav class="menu">
+				<img src="img/logo3.png" alt="Дракон и Лотос" class="menu__icon" width="75" height="70">
+
+				<a href="index2.html" class="menu__text">Главная</a>
+				<button id="openModalBtn"  class="window">Меню</button>
+				<a href="index1.html" class="menu__text">Услуги</a>
+				<a href="index3.html" class="menu__text">Бронирование</a>
+				<a href="Отзывы.html" class="menu__text">Отзывы</a>
+			</nav>
+				
+			<div id="modal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Меню</h2>
+      <button id="closeModalBtn">×</button>
+    </div>
+    <div class="modal__text">
+    	<a href="kitayskoe.html"><p>Китайское</p></a>
+        <a href="yaponskoe.html"><p>Японское</p></a>
+        <a href="koreyskoe.html"><p>Корейское</p></a>
+        <a href="napitki.html"><p>Напитки</p></a>
+      </div>
+  </div>
+  <script>
+  	const modal = document.getElementById('modal');
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+
+// Функция открытия
+function openModal() {
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+}
+
+// Функция закрытия
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Обработчики событий
+openBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+
+// Закрытие при клике мимо окна
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Закрытие при нажатии ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+  </script>
+</div>
+			<div class="stocks">	
+					<img class="stocks__img" src="img/stock1.png" alt="Драконий клуб" >
+					<img class="stocks__img" src="img/Screenshot_2.png" alt="Драконий клуб" >
+					<img class="stocks__img" src="img/Screenshot_3.png" alt="Драконий клуб" >
+					
+			</div>
+			<div class="main">
+
+				<h2 class="main__zagg">О Ресторане</h2>
+
+				<div class="main__background"> 
+
+				<h2 class="main__zag">Добро пожаловать в "Дракон и Лотос"</h2>
+				<p class="main__abzac">В нашем ресторане мы стремимся перенести вас в мир азиатской кухни, где традиции и инновации гармонично сочетаются. 
+				Название "Дракон и Лотос" символизирует силу, мудрость и красоту, которые мы воплощаем в каждом блюде и аспекте нашего заведения.</p>
+			</div>
+			<div class="main__background">
+				<h2 class="main__zag">Наша история</h2>
+				<p class="main__abzac">"Дракон и Лотос" был создан с целью поделиться с вами богатством азиатской кухни. Наша команда состоит из опытных поваров, 
+						которые провели годы, совершенствуя свои навыки в лучших ресторанах Азии. Мы гордимся тем, что можем предложить вам блюда, приготовленные из 
+						свежих и высококачественных ингредиентов, тщательно отобранных для того, чтобы каждый кусочек был настоящим открытием.</p>
+					</div>
+						<div class="main__background">
+				<h2 class="main__zag">Наша кухня</h2>
+				<p class="main__abzac">В меню "Дракона и Лотоса" вы найдете разнообразные блюда из Китая, Японии, Кореи и других азиатских стран. Мы предлагаем как 
+						традиционные классические рецепты, так и современные интерпретации, созданные нашими шеф-поварами. 
+						От изысканных суши и роллов до острого корейского кимчи и нежного китайского пекинского утки — каждый диск будет радовать ваши вкусовые рецепторы.</p>
+					</div>
+					<div class="main__background">
+				<h2 class="main__zag">Наша миссия</h2>
+				<p class="main__abzac">Мы стремимся создать уютную и гостеприимную атмосферу, где каждый посетитель чувствует себя как дома. Наша команда всегда готова помочь 
+						вам выбрать идеальное блюдо и напиток, чтобы сделать ваше время с нами по-настоящему незабываемым.</p>
+					</div>
+					<div class="main__background">
+				<h2 class="main__zag">Присоединяйтесь к нам</h2>
+				<p class="main__abzac">Мы приглашаем вас посетить нас и насладиться лучшими блюдами азиатской кухни. Будь то романтический ужин,
+				 		деловой обед или семейное торжество, мы всегда рады приветствовать вас в "Драконе и Лотосе".</p>
+				 			</div>
+			</div>
+			<div class="gallery">
+				<h2>Наша Мини-Галерея</h2>
+				<div class="gallery__image2">
+          <div><img src="img/photo4.jpg" alt="" width="450" height="300"></div>
+          <div><img src="img/photo5.jpg" alt="" width="450" height="300"></div>
+          <div><img src="img/photo6.jpg" alt="" width="450" height="300"></div>
+				</div>
+				<div class="gallery__image1">
+					<div><img src="img/photo1.jpg" alt="" width="450" height="300"></div>
+					<div><img src="img/photo2.jpg" alt="" width="450" height="300"></div>
+          <div><img src="img/photo3.jpg" alt="" width="450" height="300"></div>
+				</div>
+				
+				<div class="gallery__image3">
+					<div><img src="img/photo7.jpg" alt="" width="450" height="300"></div>
+					<div><img src="img/photo9.jfif" alt="" width="450" height="300"></div>
+				</div>
+
+			</div>
+			<div class="footer" id="footer">
+		<div class="footer__map">
+					<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/minitsen/1298530229/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/77/blagoveshchensk/category/pharmacy/184105932/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:relative;top:14px;">Аптека в Благовещенске</a><iframe src="https://yandex.ru/map-widget/v1/?display-text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD&ll=127.555350%2C50.261437&mode=search&oid=1298530229&ol=biz&sctx=ZAAAAAgBEAAaKAoSCYWZtn9l819AEXA%2BdaxSQElAEhIJrFYm%2FFL%2F9j8RbHwm%2B%2Bdp4T8iBgABAgMEBSgKOABAw48GSAFqAnJ1nQHNzMw9oAEAqAEAvQHbfat%2FwgEu5bqpk98DmMzLnKwEiPvC06AD8cnG8Bvayrzt%2FgT1uNjltQXds8LYkQbakNmRBIICMdCg0LXRgdGC0L7RgNCw0L0sINCQ0LzRg9GA0YHQutCw0Y8g0L7QsdC70LDRgdGC0YyKAgCSAgUxMTM3NZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=127.570878%2C50.261136&sspn=0.089833%2C0.034186&text=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%2C%20%D0%90%D0%BC%D1%83%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&z=13.94" width="700" height="250" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+				</div>
+				<div class="footer__text">
+					<p>Амурская область, город Видное, спуск Ладыгина, 26</p>
+					<p>Телефон: +7(953)543-16-75</p>
+					<p>E-mail: <span>restoranAzia@gmail.com</span> </p>
+					<p>Часы работы: Пн-Вс 11:00-23:00</p>
+				</div>
+				<div class="footer__img">
+					<div class="footer__images"><a href="https://t.me/alex5zz" target="_blank"><img src="img/telegram.png" alt="telegram" width="50" height="50"></a></div>
+					<div class="footer__images"><a href="https://x.com/AlexytId87965" target="_blank"><img src="img/X.png" alt="twitter" width="50" height="50"></a></div>
+					<div class="footer__images"><a href="https://vk.com/rodin_a_v" target="_blank"><img src="img/vk.png" alt="VK" width="50" height="50"></a></div>
+				</div>
+		
+			</div>
+		
+		</body>		
